@@ -1,0 +1,8 @@
+package com.project.service.exceptions;
+
+public class DriverNotFoundException extends RuntimeException {
+	
+	public DriverNotFoundException(String msg) {
+		super(msg);
+	}
+}
