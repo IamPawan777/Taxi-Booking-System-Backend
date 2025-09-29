@@ -40,6 +40,7 @@ public class CustomerTransformer {
 				.name(customer.getName())
 				.age(customer.getAge())
 				.emailId(customer.getEmailId())
+				.gender(customer.getGender())
 				.build();
 		return customerResponse;
 

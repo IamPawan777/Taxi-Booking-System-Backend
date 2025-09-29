@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: Taxi Booking API
+  version: 1.3.1
+  description: |
+    # Taxi Booking API 🚖
+    
+    The Taxi Booking API is an innovative 🚀 and robust backend system designed to power modern taxi booking applications. This comprehensive API provides complete functionality for customers, drivers, and administrators to manage the entire taxi booking lifecycle. Key highlights of the Taxi Booking API include:
+
+    ## 🧤 Complete Booking Ecosystem
+    The API offers a complete ecosystem for taxi booking operations, including user registration, ride booking, real-time tracking, payment processing, and ride history management. Developers can build full-featured taxi applications similar to industry leaders.
+
+    ## 🔩 Multi-Role Architecture
+    The system supports multiple user roles (Customer, Driver) with separate authentication flows and dedicated endpoints for each role. This ensures secure and role-based access to API resources.
+
+    ## 🔌 RESTful Design
+    Built following REST principles with clear HTTP status codes, standardized error responses, and consistent API patterns. The API uses JWT-based authentication for secure communication.
+
+    ## 🤝 Real-time Capabilities
+    Supports real-time features including ride requests, driver location tracking, and status updates, enabling seamless user experiences similar to modern ride-hailing apps.
+
+    ## 🎼 Comprehensive Documentation
+    Each endpoint is thoroughly documented with request/response schemas, authentication requirements, and example payloads to accelerate integration and development.
+
+    ### Key Features:
+    - **User Management**: Customer and driver registration, profile management
+    - **Ride Booking**: Complete booking lifecycle from request to completion
+    - **Real-time Tracking**: Live location updates and ETA calculations
+    - **Payment Integration**: Secure payment processing and history
+    - **Admin Dashboard**: Comprehensive administrative controls
+    - **Rating System**: Two-way rating system for customers and drivers
+
+    Built with Spring Boot, Spring Security, JWT Authentication, and following industry best practices.
+
+  contact:
+    name: Pawan Bisht
+    url: https://pawanbisht.netlify.app
+    email: your-email@domain.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8080/api
+    description: Local development server
+  - url: https://api.taxibooking.example.com/v1
+    description: Production server
+
+externalDocs:
+  description: Project GitHub Repository
+  url: https://github.com/IamPawan777/taxi-booking-backend
+
+tags:
+  - name: Authentication
+    description: User registration and login endpoints
+  - name: Customers
+    description: Customer-specific operations
+  - name: Drivers
+    description: Driver-specific operations and management
+  - name: Bookings
+    description: Ride booking and management
+  - name: Payments
+    description: Payment processing and history
+  - name: Admin
+    description: Administrative operations
+
+paths:
+  # Authentication endpoints
+  /auth/customer/register:
+    post:
+      tags: [Authentication]
+      summary: Register a new customer
+      description: Creates a new customer account in the system
+      # ... endpoint details
+  
+  /auth/driver/register:
+    post:
+      tags: [Authentication]
+      summary: Register a new driver
+      description: Creates a new driver account with vehicle information
+      # ... endpoint details
+  
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: User login
+      description: Authenticate user (customer or driver) and return JWT token
+      # ... endpoint details
+
+  # Customer endpoints
+  /customer/bookings:
+    get:
+      tags: [Customers]
+      summary: Get customer booking history
+      description: Retrieve complete booking history for authenticated customer
+      # ... endpoint details
+
+  # Driver endpoints
+  /driver/availability:
+    put:
+      tags: [Drivers]
+      summary: Update driver availability status
+      description: Mark driver as available/unavailable for bookings
+      # ... endpoint details
+
+  # Booking endpoints
+  /bookings:
+    post:
+      tags: [Bookings]
+      summary: Create a new booking
+      description: Customer creates a new ride booking request
+      # ... endpoint details
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid
+    NotFoundError:
+      description: The specified resource was not found
+
+security:
+  - bearerAuth: []

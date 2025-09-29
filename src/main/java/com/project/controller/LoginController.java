@@ -21,10 +21,14 @@ import com.project.dto.request.LoginRequest;
 import com.project.dto.response.LoginResponse;
 import com.project.service.CustomUserDetailsService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "🔐 Login API", description = "Login API Before Using the Service")
 @RequiredArgsConstructor
 public class LoginController {
 	
@@ -38,6 +42,7 @@ public class LoginController {
 	private JwtUtil jwtUtil;
 	
 	@PostMapping("/login")
+	@Operation(summary = "Login customer and driver before enter", description = "Public authetication")
 	public ResponseEntity<?> login(@RequestBody LoginRequest loginForm){
 		System.out.println("Entry: "+loginForm.getEmail()+" and "+loginForm.getPassword());
 		try {			

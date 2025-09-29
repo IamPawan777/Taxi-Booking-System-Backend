@@ -21,17 +21,20 @@ import com.project.dto.response.DriverResponse;
 import com.project.service.DiverService;
 import com.project.service.exceptions.DriverNotFoundException;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/driver")
-@Tag(name = "Driver APIs", description = "Add Driver ")
+@Tag(name = "🚖 Driver API", description = "Add, Delete, Update and check Profile of Driver APIs")
 public class DriverController {
 	
 	@Autowired
 	DiverService driverService;
 	
 	@PostMapping("/add")
+	@Operation(summary = "Add new driver who drive the car", description = "Public authetication")
 	public ResponseEntity<?> addDriver(@RequestBody DriverRequest driverRequest) {
 		try {
 			DriverResponse driver = driverService.addDriver(driverRequest);
@@ -44,12 +47,16 @@ public class DriverController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/get/all")
+	@Operation(summary = "Get all driver which already stored by admin", description = "Requires Admin role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public List<DriverResponse> getAll(){
 		return driverService.getAll();
 	}
 	
 	@PreAuthorize("hasRole('DRIVER')")
 	@GetMapping("/get/profile-id/{id}")
+	@Operation(summary = "Check complete driver profile by driver", description = "Requires Driver role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> driverProfile(@PathVariable("id") String emailId){
 		try {
 			DriverResponse response = driverService.driverProfile(emailId);
@@ -62,6 +69,8 @@ public class DriverController {
 	
 	@PreAuthorize("hasRole('DRIVER')")
 	@PutMapping("/update/{emailId}")
+	@Operation(summary = "Update driver information in the app by driver", description = "Requires Driver role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> updateDriverInfo(@PathVariable String emailId, @RequestBody DriverInfoUpdateRequest updateDriverInfo ){
 		String driverInfo = driverService.updateDriverInfo(emailId, updateDriverInfo.getAge(), updateDriverInfo.getName(), updateDriverInfo.getPassword());
 		return ResponseEntity.status(HttpStatus.OK).body(driverInfo);
@@ -69,6 +78,8 @@ public class DriverController {
 	
 	@PreAuthorize("hasAnyRole('DRIVER', 'ADMIN')")
 	@DeleteMapping("/delete/{emailId}")
+	@Operation(summary = "Delete driver account in the app by admin & driver", description = "Requires Driver, Admin role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> deleteDriver(@PathVariable String emailId){
 		String deleteDriver = driverService.deleteDriver(emailId);
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(deleteDriver);

@@ -20,19 +20,21 @@ import com.project.dto.response.DriverResponse;
 import com.project.service.BookingService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/booking")
-@Tag(name = "Booking API's", description = "Booking Status")
+@Tag(name = "📳 Booking API", description = "Booking Status like Confirm, Cencel and Complete APIs ")
 public class BookingController {
 	
 	@Autowired
 	BookingService bookingService;
 	
 	@PreAuthorize("hasRole('RIDER')")
-//	@Operation(security = { @SecurityRequirement(name = "bearerAuth") })
 	@PostMapping("/book/customer-id/{customerId}")
+	@Operation(summary = "Book new cab by customer", description = "Requires Rider role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public BookingResponse bookCab(@RequestBody BookingRequest bookingRequest, @PathVariable("customerId") int customerId) {
 		return bookingService.bookCab(bookingRequest, customerId);
 	}
@@ -41,6 +43,8 @@ public class BookingController {
 	
 	@PreAuthorize("hasRole('RIDER')")
 	@PostMapping("/cancel/customer/bookingId/{bookingId}")
+	@Operation(summary = "Cencel cab by customer", description = "Requires Rider role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
     public String cancelBooking(@PathVariable int bookingId) {
         return bookingService.cancelBooking(bookingId);
     }
@@ -48,6 +52,8 @@ public class BookingController {
 	
 	@PreAuthorize("hasRole('DRIVER')")
 	@PostMapping("/complete/driver/bookingId/{bookingId}")
+	@Operation(summary = "Ride completed or not confirm by driver", description = "Requires Driver role")
+    @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
     public String completeBooking(@PathVariable int bookingId) {
         return bookingService.completeBooking(bookingId);
     }
