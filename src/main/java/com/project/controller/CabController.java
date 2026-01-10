@@ -33,7 +33,7 @@ public class CabController {
 	
 	@PreAuthorize("hasRole('DRIVER')")
 	@PostMapping("/register/driverId/{driverId}")
-	@Operation(summary = "Add new cab by driver", description = "Requires Driver role")
+	@Operation(summary = "1-Add new cab by driver", description = "Requires Driver role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public CabResponse registerCab(@RequestBody CabRequest cabRequest, @PathVariable("driverId") int driverId) {
 		return cabService.registerCab(cabRequest, driverId);
@@ -42,7 +42,7 @@ public class CabController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/get/all")
-	@Operation(summary = "Get all cabs by admin", description = "Requires Admin role")
+	@Operation(summary = "3-Get all cabs by admin", description = "Requires Admin role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public List<CabResponse2> getAllCabs() {
 		return cabService.getAllCabs();
@@ -51,7 +51,7 @@ public class CabController {
 	
 	@PreAuthorize("hasAnyRole('ADMIN', 'DRIVER')")
 	@GetMapping("/get/cab-id/{cabId}")
-	@Operation(summary = "Get cab using cab id by admin & driver", description = "Requires Admin, Driver role")
+	@Operation(summary = "2-Get cab using cab id by admin & driver", description = "Requires Admin, Driver role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> getCabById(@PathVariable float cabId) {
 		try {

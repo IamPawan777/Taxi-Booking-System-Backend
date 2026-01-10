@@ -35,7 +35,7 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@PostMapping("/add")
-	@Operation(summary = "Add new Customer", description = "Public endpoint - No authentication required")
+	@Operation(summary = "1-Add new Customer", description = "Public endpoint - No authentication required")
 	public ResponseEntity<?> addCustomer(@RequestBody CustomerRequest customerRequest) {
 		try {
 			CustomerResponse customer = customerService.addCustomer(customerRequest);
@@ -49,7 +49,7 @@ public class CustomerController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/get/all")
-	@Operation(summary = "Get all customer accounts by admin", description = "Requires ADMIN role")
+	@Operation(summary = "6-View all registered customers by admin", description = "Requires ADMIN role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public List<CustomerResponse> getAll(){
 		return customerService.getAll();
@@ -58,7 +58,7 @@ public class CustomerController {
 	
 	@PreAuthorize("hasAnyRole('USER', 'RIDER')")
 	@GetMapping("/get/profile-id/{emailId}")
-	@Operation(summary = "Get customer profile using email id by rider ", description = "Requires USER or RIDER role")
+	@Operation(summary = "2-Get customer profile using email id by rider ", description = "Requires USER or RIDER role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> getCustomer(@PathVariable("emailId") String emailId) {
 		try {
@@ -74,7 +74,7 @@ public class CustomerController {
 	
 	@PreAuthorize("hasRole('RIDER')")
 	@PutMapping("/update")
-	@Operation(summary = "Update customer password by rider", description = "Requires RIDER role")
+	@Operation(summary = "3-Customer allow to update their own information rider", description = "Requires RIDER role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> updatePassword(@RequestBody CustomerUpdateRequest updatePassword ) {
 		String updateCustomer = customerService.updatePassword(updatePassword.getEmail(), updatePassword.getNewPassword());
@@ -84,7 +84,7 @@ public class CustomerController {
 	
 	@PreAuthorize("hasRole('RIDER')")
 	@DeleteMapping("/delete/{emailId}")
-	@Operation(summary = "Delete customer account using email id by rider", description = "Requires RIDER role")
+	@Operation(summary = "4-Delete customer account using email id by rider", description = "Requires RIDER role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public ResponseEntity<?> deleteByEmail(@PathVariable String emailId) {
 		String deleteByEmail = customerService.deleteByEmail(emailId);
@@ -94,7 +94,7 @@ public class CustomerController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/get/adult")
-	@Operation(summary = "Get adult customers account by admin", description = "Requires ADMIN role")
+	@Operation(summary = "5-Filters customers whose age is 18 or above by admin", description = "Requires ADMIN role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public List<CustomerResponse> getAdult(@RequestParam int age){
 		return customerService.getAdult(age);

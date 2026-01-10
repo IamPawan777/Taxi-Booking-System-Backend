@@ -33,7 +33,7 @@ public class BookingController {
 	
 	@PreAuthorize("hasRole('RIDER')")
 	@PostMapping("/book/customer-id/{customerId}")
-	@Operation(summary = "Book new cab by customer", description = "Requires Rider role")
+	@Operation(summary = "1- Book new cab by customer", description = "Requires Rider role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
 	public BookingResponse bookCab(@RequestBody BookingRequest bookingRequest, @PathVariable("customerId") int customerId) {
 		return bookingService.bookCab(bookingRequest, customerId);
@@ -43,7 +43,7 @@ public class BookingController {
 	
 	@PreAuthorize("hasRole('RIDER')")
 	@PostMapping("/cancel/customer/bookingId/{bookingId}")
-	@Operation(summary = "Cencel cab by customer", description = "Requires Rider role")
+	@Operation(summary = "2- Cencel cab by customer", description = "Requires Rider role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
     public String cancelBooking(@PathVariable int bookingId) {
         return bookingService.cancelBooking(bookingId);
@@ -52,7 +52,7 @@ public class BookingController {
 	
 	@PreAuthorize("hasRole('DRIVER')")
 	@PostMapping("/complete/driver/bookingId/{bookingId}")
-	@Operation(summary = "Ride completed or not confirm by driver", description = "Requires Driver role")
+	@Operation(summary = "3- Ride completed or not confirm by driver", description = "Requires Driver role")
     @SecurityRequirement(name = "bearerAuth") // ✅ JWT required
     public String completeBooking(@PathVariable int bookingId) {
         return bookingService.completeBooking(bookingId);
