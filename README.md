@@ -82,8 +82,13 @@ A backend system similar to Uber/Ola 🚕 enabling cab bookings 📳, customer a
 ## 🔐 Security Feature
 
 The most important model for securing the project is ***Spring Security***. Only Spring Security is not enough, so implement with ***JWT (JSON Web Token).***
+***Authentication***
 
 ![alt text](image-2.png)
+
+***Authorization***
+
+![alt text](image-3.png)
 
 **Authentication flow for different roles:**
 
