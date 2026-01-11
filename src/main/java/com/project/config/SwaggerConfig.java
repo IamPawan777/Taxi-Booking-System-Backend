@@ -29,20 +29,20 @@ public class SwaggerConfig {
     OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("Texi Booking API 🚖") // Change title here
+                .title("QuickTrip API 🚖") // Change title here
                 .version("1.0.0")
                 .description("""
-                	    The Taxi Booking backend project is an innovative 🚀 and robust backend system 🔭 aimed at providing a complete solution for modern transportation applications. The project focuses on delivering a comprehensive set of APIs that cater to all aspects of taxi booking operations, enabling developers to seamlessly build full-featured ride-hailing applications. Key highlights of the Taxi Booking project include:
+                	    The QuickTrip backend project is an innovative 🚀 and robust backend system 🔭 aimed at providing a complete solution for modern transportation applications. The project focuses on delivering a comprehensive set of APIs that cater to all aspects of taxi booking operations, enabling developers to seamlessly build full-featured ride-hailing applications. Key highlights of the Taxi Booking project include:
                 	    
-                	    🧤 **Complete Booking Ecosystem**: The Taxi Booking project provides a complete end-to-end solution for taxi services. Developers can implement customer apps, driver apps, and admin panels with ready-to-use APIs, allowing them to focus on building great user experiences rather than complex backend logic.
+                	    🧤 **Complete Booking Ecosystem**: The QuickTrip project provides a complete end-to-end solution for taxi services. Developers can implement customer apps, driver apps, and admin panels with ready-to-use APIs, allowing them to focus on building great user experiences rather than complex backend logic.
                 	    
                 	    🔩 **Multi-Role Architecture**: The project offers a sophisticated role-based system supporting Customers, Drivers, and Administrators. Each role has dedicated APIs with appropriate security measures, ensuring proper access control and data isolation while maintaining a unified system architecture.
                 	    
-                	    🔌 **RESTful API Design**: The Taxi Booking project understands the challenges developers face when building complex booking systems. To address this, the project provides clean RESTful endpoints, comprehensive documentation, standardized error handling, and consistent response formats, simplifying integration and reducing development time.
+                	    🔌 **RESTful API Design**: The QuickTrip Booking project understands the challenges developers face when building complex booking systems. To address this, the project provides clean RESTful endpoints, comprehensive documentation, standardized error handling, and consistent response formats, simplifying integration and reducing development time.
                 	    
                 	    🔒 **Advanced Security with JWT**: The project implements robust security measures including JWT-based authentication, ensuring secure communication between clients and the server. This includes token-based session management, secure password handling, and protection against common web vulnerabilities.
                 	    
-                	    Overall, the Taxi Booking project is a valuable resource for developers seeking to build modern transportation applications. By providing a complete, secure, and scalable backend system, the project empowers developers to create innovative mobility solutions, ultimately contributing to the advancement of digital transportation services.
+                	    Overall, the QuickTrip project is a valuable resource for developers seeking to build modern transportation applications. By providing a complete, secure, and scalable backend system, the project empowers developers to create innovative mobility solutions, ultimately contributing to the advancement of digital transportation services.
                 	    
                 	    ## 🔄 Complete Workflow:
                 	    1. **Customer App** 📱: 
@@ -73,7 +73,7 @@ public class SwaggerConfig {
     OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("Texi Booking API 🚖") // Change title here
+                .title("QuickTrip Booking API 🚖") // Change title here
                 .version("1.0.0")
                 .description("""
                         ### The Taxi Booking API is an innovative 🚀 and robust backend system designed to power modern taxi booking applications.
