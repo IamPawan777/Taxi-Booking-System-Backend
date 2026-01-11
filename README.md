@@ -1,5 +1,5 @@
 
-# 🚗Texi Booking
+# 🚗 Quick Trip
 
 A backend system similar to Uber/Ola 🚕 enabling cab bookings 📳, customer account management, and driver operations 🚔, with an admin panel for overseeing all users and cabs. Secured with JWT-based authentication 🔐 and role-based access control (RBAC), the project was built with Spring Boot and exposes 15+ REST APIs for all operations. It leverages Spring Data JPA for database interactions with MySQL ♻ and integrates Spring Mail 📩 to automatically send booking confirmation emails to customers. The entire API suite is thoroughly documented with Swagger 📰 for seamless testing and integration.
 
@@ -83,7 +83,9 @@ A backend system similar to Uber/Ola 🚕 enabling cab bookings 📳, customer a
 
 The most important model for securing the project is ***Spring Security***. Only Spring Security is not enough, so implement with ***JWT (JSON Web Token).***
 
-**Authentication flow:**
+![alt text](image-2.png)
+
+**Authentication flow for different roles:**
 
 ![App Screenshot](https://github.com/user-attachments/assets/27573c54-cd4e-478e-801f-46f5d4430a93)
 
