@@ -102,7 +102,7 @@ The most important model for securing the project is ***Spring Security***. Only
 
 **Description of the project:**
 
-![App Screenshot](https://github.com/user-attachments/assets/fe5bedab-1171-4c1a-a455-5e825889bb3a)
+![alt text](image-4.png)
 
 
 **All APIs:**
