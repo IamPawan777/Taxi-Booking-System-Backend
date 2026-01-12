@@ -11,7 +11,7 @@ Layered architecture is a design pattern where the application is divided into l
 
 # 💹 Entity Relationship
 
-Project designed the database using an Entity Relationship model. Customer, Driver, Cab, and Booking are the core entities. A customer can have multiple bookings, each booking is associated with one driver and one cab, and a driver is linked to a single cab. Relationships are implemented using JPA annotations like @OneToMany and @ManyToOne.”
+Project designed the database using an Entity Relationship model. Customer, Driver, Cab, and Booking are the core entities. A customer can have multiple bookings, each booking is associated with one driver and one cab, and a driver is linked to a single cab. Relationships are implemented using JPA annotations like @OneToMany and @ManyToOne.
 
 ![alt text](image-1.png)
 
