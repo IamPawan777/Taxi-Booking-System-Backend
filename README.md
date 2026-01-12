@@ -7,7 +7,7 @@ A QuickTrip backend system similar to Uber/Ola 🚕 enabling cab bookings 📳, 
 
 Layered architecture is a design pattern where the application is divided into logical layers, and each layer has a specific responsibility. Each layer communicates only with the layer below it, not directly with other layers. The project follows layered architecture. The Controller layer handles HTTP requests, the Service layer contains business logic, and the Repository layer interacts with the database. Each layer has a single responsibility, which improves maintainability and scalability.”
 
-![alt text](image-5.png)
+![alt text](image-6.png)
 
 # 💹 Entity Relationship
 
