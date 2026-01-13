@@ -151,11 +151,19 @@ The most important model for securing the project is ***Spring Security***. Only
 
 ## 🕹 Technologies Used
 
-**Spring Boot:** Rest APIs, Spring Data JPA, Spring Security Spring Mail etc
+**Language:** Java, Spring Boot, Rest APIs, 
+
+**ORM Framwork:** Spring Data, JPA
 
 **Database:** MySQL
 
-**Other:** Swagger Documentation, JWT token, Apache Tomcat
+**Build Tool:** Maven
+
+**Security:**  Spring Security, JWT
+
+**Testing:** Postman
+
+**Other:** Spring Mail etc, Swagger Documentation, Apache Tomcat
 
 
 
