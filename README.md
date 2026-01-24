@@ -103,7 +103,9 @@ The most important model for securing the project is ***Spring Security***. Only
 **Authentication flow for different roles:**
 
 ![App Screenshot](https://github.com/user-attachments/assets/27573c54-cd4e-478e-801f-46f5d4430a93)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/27573c54-cd4e-478e-801f-46f5d4430a93" width="500" height="800">
+</p>
 
 
 
