@@ -21,7 +21,7 @@ services:
     image: mysql:8.0
     container_name: db-container
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: IamPawan
       MYSQL_DATABASE: springboot_Texi_Booking
       MYSQL_PASSWORD: IamPawan
     ports:
@@ -31,9 +31,9 @@ services:
     networks:
       - quicktrip-network
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot || exit 1"]
-      interval: 10s
-      timeout: 5s
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -pIamPawan || exit 1"]
+      interval: 20s
+      timeout: 10s
       retries: 5
 
 volumes:
