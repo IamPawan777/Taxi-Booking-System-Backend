@@ -29,7 +29,7 @@ public class SwaggerConfig {
     OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("QuickTrip API 🚖") // Change title here
+                .title("QuickTrip APIs 🚖") // Change title here
                 .version("1.0.0")
                 .description("""
                 	    The QuickTrip backend project is an innovative 🚀 and robust backend system 🔭 aimed at providing a complete solution for modern transportation applications. The project focuses on delivering a comprehensive set of APIs that cater to all aspects of taxi booking operations, enabling developers to seamlessly build full-featured ride-hailing applications. Key highlights of the Taxi Booking project include:
