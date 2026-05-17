@@ -164,6 +164,8 @@ The most important model for securing the project is ***Spring Security***. Only
 
 **Testing:** Postman
 
+**Deployment** Docker, AWS
+
 **Other:** Spring Mail, Swagger Documentation, Apache Tomcat Server
 
 
@@ -188,7 +190,7 @@ Before running the project, make sure you have the following knowledge:
 
 ✅ Lombok (for shorter code but with Annotation)
 
-🔰 Devtool (for auto deployment)
+🔰 Devtool - Docker, AWS (for auto deployment)
 
 
 
