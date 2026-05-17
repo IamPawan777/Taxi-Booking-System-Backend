@@ -5,13 +5,13 @@ A QuickTrip backend system similar to Uber/Ola 🚕 enabling cab bookings 📳, 
 
 # ⚛ Layered Architecture
 
-Layered architecture is a design pattern where the application is divided into logical layers, and each layer has a specific responsibility. Each layer communicates only with the layer below it, not directly with other layers. The project follows layered architecture. The Controller layer handles HTTP requests, the Service layer contains business logic, and the Repository layer interacts with the database. Each layer has a single responsibility, which improves maintainability and scalability.”
+Layered architecture is a design pattern where the application is divided into logical layers, and each layer has a specific responsibility. Each layer communicates only with the layer below it, not directly with other layers. The project follows a layered architecture. The Controller layer handles HTTP requests, the Service layer contains business logic, and the Repository layer interacts with the database. Each layer has a single responsibility, which improves maintainability and scalability.”
 
 ![alt text](image-6.png)
 
 # 💹 Entity Relationship
 
-Project designed the database using an Entity Relationship model. Customer, Driver, Cab, and Booking are the core entities. A customer can have multiple bookings, each booking is associated with one driver and one cab, and a driver is linked to a single cab. Relationships are implemented using JPA annotations like @OneToMany and @ManyToOne.
+Project designed using an Entity Relationship model. Customer, Driver, Cab, and Booking are the core entities. A customer can have multiple bookings; each booking is associated with one driver and one cab, and a driver is linked to a single cab. Relationships are implemented using JPA annotations like @OneToMany and @ManyToOne.
 
 ![alt text](image-1.png)
 
@@ -108,7 +108,7 @@ The most important model for securing the project is ***Spring Security***. Only
 
 
 
-## 👀 Screenshots
+## 👀 Screenshots of Documentation:
 
 **Description of the project:**
 
@@ -174,13 +174,13 @@ Before running the project, make sure you have the following knowledge:
 
 👩‍💻 Java 17+
 
-🧠 Spring ecosytem (Spring Boot, Rest APIs, Spring Data JPA, Spring Security etc)
+🧠 Spring ecosystem (Spring Boot, Rest APIs, Spring Data JPA, Spring Security, etc)
 
-⚠ Spring security with JWT authetication and autherization
+⚠ Spring security with JWT authentication and authorization
 
-🎉 IDE (Spring Tool Suit, Eclipse, IntelliJ IDEA or any preferred IDE)
+🎉 IDE (Spring Tool Suite, Eclipse, IntelliJ IDEA, or any preferred IDE)
 
-👯‍♀️ MySQL Database (for store all customer, driver, cab and booking info.)
+👯‍♀️ MySQL Database (for storing all customer, driver, cab, and booking info.)
 
 🤔 Maven (for dependency management)
 
